@@ -84,8 +84,9 @@ catalog
 #catalog li.col_2,
 #catalog li.col_4{margin-right:0;}
 #catalog ul   {list-style-type:none;margin-left:0;}
-#catalog a.thumb {display:block;height:280px;overflow:hidden;}/*crop image height if necessary*/
-#catalog a.thumb img  {width:456px;height:auto;}
+.catalog a.thumb {display:block;height:280px;overflow:hidden;}/*crop image height if necessary*/
+.catalog a.thumb img  {width:456px;height:auto;}
+.catalog a.thumb.handheld { display: none; }
 #catalog h3    {margin-top:1em;}
 #catalog h3 a  {color:#808080;display:block;border:solid #e6e6e6 3px;border-width:0 0 3px 0;text-decoration:none;}
 #catalog h3 a:hover,
@@ -254,6 +255,8 @@ body .bootic_form .opt_in .bootic_input_field {
 
   .handheld {display: block!important;}
   .desktop {display: none!important;}
+  .catalog a.thumb.handheld { display: block; }
+  .catalog a.thumb.desktop { display: none; }
   #main h2 { margin-bottom: 1em;}
   #logo {
     display: none;
@@ -301,6 +304,17 @@ body .bootic_form .opt_in .bootic_input_field {
     text-align: left;
     float: none;
     width: auto;
+    display: block;
+    margin-bottom: .5em;
+  }
+  body .bootic_form input[type=text],
+  body .bootic_form textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%!important;
+  }
+  body .bootic_form .uber_required {
+    display: none!important;
   }
 
   .collection {
