@@ -116,10 +116,9 @@ catalog
 .collection .collection_gallery__link {
   display: block;
   border: solid silver 1px;
-  opacity: 0.5;
   position: relative;
 }
-.collection .collection_gallery__link:hover { opacity: 1; }
+.collection .collection_gallery__link:hover { border-color: gray; }
 .collection .collection_gallery__link img { display: block; }
 
 .collection .collection_gallery__link .label {
@@ -195,8 +194,6 @@ work detail
 .mini_gallery .thumb {
  float: left;
  margin: 5px;
- opacity: 0.5;
- transition: opacity .25s ease-in-out;
  box-shadow: 1px 2px 2px rgba(0,0,0,0.4);
 }
 .mini_gallery .thumb:hover,
