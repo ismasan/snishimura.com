@@ -1,0 +1,37 @@
+<div class="page">
+<div class="clearfix">
+  <div class="posts_list">
+    <h2>
+    {% if blog.date %}
+      {% capture localized_month %}datetime.month_names.month_{{blog.month}}{% endcapture %}
+      {% if blog.day %}{{blog.day}}{% endif %}
+        {{ localized_month | t }} {{ blog.year }}
+      {% else %}
+        {{ 'titles.latest_news' | t }}
+    {% endif %}
+    </h2>
+
+{% paginate blog.posts by 10 %}
+{% for post in paginated_list %}
+
+  <div class="post">
+
+    <h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+
+    <div class="entry">
+    {{ post | split }}
+    </div><!-- /entry -->
+
+    <small class="date" title="{{ post.published_on | date:'%b %d %H:%M:%S %Y' }}">
+    Published <span>on {{ post.published_on | date:'%d/%m/%Y' }}</span>
+    </small>
+
+  </div><!-- /post -->
+
+{% endfor %}
+{{ paginated_list | pagination }}
+{% endpaginate %}
+  </div>
+</div>
+</div>
+

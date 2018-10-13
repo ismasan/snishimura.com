@@ -1,0 +1,9 @@
+<h2>{{ 'orders.titles.cart' | t }}</h2>
+
+{% if cart.units > 0 %}
+	{% cart %}
+{% else %}
+<div class="keep-browsing">
+	<p>{{ 'orders.messages.empty_cart' | t }}</p>
+</div>
+{% endif %}

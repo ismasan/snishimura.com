@@ -1,0 +1,25 @@
+{% assign product = collection.first_product %}
+
+{% include "_sub_nav" %}
+
+<div class="clearfix collection">
+  <h1 class="handheld">{{ collection.title }}</h1>
+  <div class="col1 collection_body">
+    <h1 class="desktop">{{ collection.title }}</h1>
+    {{ collection.body }}
+  </div><!-- desc -->
+  <div class="col2 collection_products">
+    <ul class="collection_gallery clearfix">
+      {% for prod in products %}
+        <li class="collection_gallery__item col_{% cycle '1', '2', '3', '4', '5' %} {% if forloop.index > 1 %}desktop{% endif %}">
+          <a href="{{ prod.url }}" title="{{ prod.title }}" class="collection_gallery__link">
+            <img src="{{ prod.first_image | resize: '384x384#'}}" width="96" alt="{{ prod.title }}" />
+            {% if forloop.index == 1 %}
+            <span class="label handheld">Enter gallery</span>
+            {% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<h2>{{ products | size }} products found</h2>
+
+{% paginate products by 20 %}
+	<ul class="products clearfix">
+	{% loop paginated_list in 'product_item' %}
+	{{ paginated_list | pagination }}
+	</ul>
+{% endpaginate %}

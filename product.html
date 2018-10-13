@@ -1,0 +1,68 @@
+{% assign collection = product.first_collection %}
+
+{% include "_sub_nav" %}
+
+<div id="products">
+  <a href="#" class="arrow arrow__prev"><img src="{{ 'arrow_left.png' | asset_url }}" /></a>
+  <a href="#" class="arrow arrow__next"><img src="{{ 'arrow_right.png' | asset_url }}" /></a>
+  <div id="showcase_gallery" class="owl-carousel">
+  {% for prod in collection.products %}
+  <div class="showcase">
+    <div class="product">
+      <div class="product_picture" id="item-{{ forloop.index0 }}">
+        <span class="middle"></span>
+        {% if prod == product %}
+          <img data-path="{{ prod.url }}" src="{{ prod.first_image | resize: '1900x'}}" alt="{{ prod.title }}" />
+        {% else %}
+          <img data-path="{{ prod.url }}" data-src="{{ prod.first_image | resize: '1900x'}}" class="lazyOwl" alt="{{ prod.title }}" />
+        {% endif %}
+      </div>
+    </div>
+    <div id="section_info" class="clearfix">
+      <div class="col1">
+        {% if prod == product %}
+        <h1>{{ prod.title }}</h1>
+        {% else %}
+        <h5>{{ prod.title }}</h5>
+        {% endif %}
+        {{ prod.description | format_text }}
+      </div>
+      <div class="col2">
+        {% if prod.product_type %}
+          <ul class="attrs">
+            {% for field in prod.attributes %}
+              {% if field.value != '' %}
+               <li class="attribute-{{field.key}}">
+                 <strong>{{ field.name }}:</strong> <span>{{ field.value }}</span>
+               </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+  </div>
+  
+  <!-- /work list -->
+  {% if collection.has_products %}
+  <h4 class="section_title">Works in "{{ collection.title }}"</h4>
+  <div class="mini_gallery owl-carousel" id="product_gallery">
+    {% for prod in collection.products %}
+      {% if prod == product %}
+        <script>
+          var CURRENT_PRODUCT_INDEX = {{ forloop.index0 }};  
+        </script>
+      {% endif %}
+      <a href="{{ prod.url }}" data-idx="{{ forloop.index0 }}" title="{{ prod.title }}" class="thumb{% if prod.id == product.id %} current{% endif %}">
+        <img src="{{ prod.first_image | resize: '206x206#'}}" width="103" alt="{{ prod.title }}" />  
+      </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <p>
+    <a href="/">&laquo;back to all works</a>
+  </p>
+</div>

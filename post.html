@@ -1,0 +1,13 @@
+<div class="page">
+
+  <h2>{{ post.title }}</h2>
+
+  <div class="entry">
+  {{ post.body }}
+  </div><!-- /entry -->
+
+  <small class="date" title="{{ post.published_on | date:'%b %d %H:%M:%S %Y' }}">
+  Published <span>on {{ post.published_on | date:'%d/%m/%Y' }}</span>
+  </small>
+
+</div>

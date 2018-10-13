@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Always force latest IE rendering engine & Chrome Frame -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="author" value="Ismael Celis 2016" />
+  <meta name="description" content="{{ shop.description }}" />
+  {{ 'master.css' | asset_url | stylesheet_tag }}
+  {% bootic_header %}
+  {% if product %}
+   {{ "owl.carousel.css" | asset_url | stylesheet_tag }}
+   {{ "owl.theme.css" | asset_url | stylesheet_tag }}
+  {% endif %}
+  <title>{% current_title %} - {{ shop.name }}</title>
+  
+</head>
+
+<body id="{{ template }}">
+  <div id="wrapper">
+    <div id="container">
+      <div id="header" class="clearfix">
+        <ul id="nav">
+          {% for link in menus.main_menu.links %}
+          <li class="menuitem-{{ link.slug }}{{ ' current' | if_current_page: link }}">
+            <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+          </li>
+          {% endfor %}
+        </ul><!-- /nav -->
+        <h2 id="logo">
+          <span>Sachiyo Nishimura</span>
+          <a href="/" title="Sachiyo Nishimura Site home">
+            <img src="{{ 'logo.png' | asset_url }}" alt="Sachiyo Nishimura" />
+          </a>
+        </h2><!-- /logo -->
+      </div><!-- /header -->
+      <div id="main" class="clearfix">
+        {{ content_for_layout }}
+      </div><!-- /main -->
+    </div><!-- /container -->
+  </div><!-- /wrapper -->
+  {% bootic_footer %}
+  {% if product %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    {{ "owl.carousel.min.js" | asset_url | javascript_tag }}
+    {{ "app.js" | asset_url | javascript_tag }}
+  {% endif %}
+</body>
+</html>

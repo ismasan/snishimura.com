@@ -1,0 +1,9 @@
+<nav class="sub_nav top_separator">
+  {% for n in menus.catalog.links %}
+    {% if n.slug == collection.slug %}
+      <strong>{{ n.title }}</strong> | 
+    {% else %}
+      <a href="{{ n.url }}">{{ n.title }}</a> |
+    {% endif %}
+  {% endfor %}
+</nav>

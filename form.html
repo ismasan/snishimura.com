@@ -1,0 +1,19 @@
+<div class="page">
+<h2>{{ form.title }}</h2>
+
+{% if form.sent %}
+
+  <div class="entry bootic_sent_contact_message">
+    {{ 'forms.messages.sent' | t }}
+  </div>
+
+{% else %}
+
+  <div class="entry">
+    {{ form.body }}
+  </div>
+
+  {% contact_form_fields %}
+
+{% endif %}
+</div>

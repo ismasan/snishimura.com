@@ -1,0 +1,13 @@
+<li class="col_{% cycle '1', '2', '3', '4' %}">
+  {% unless _section.has_products %}
+    <em>No work here yet</em>
+  {% else %}
+    <h3>
+      <a href="{{ _section.url }}">{{ _section.title }}</a>
+    </h3>
+    <a href="{{ _section.url }}" class="thumb" title="See details for {{ _section.title }}">
+      <img width="456" src="{{ _section.first_product.first_image | resize: '912x'}}" alt="{{ _section.title }}" />
+    </a>
+  {% endunless %}
+</li>
+
