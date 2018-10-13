@@ -6,9 +6,9 @@ GENERAL, TYPOGRAPHY, FONT SIZES
 
 body       {font-family:helvetica, sans-serif; font-size:12px; color:#000; text-align:center;}
 
-form,table,ul,ol,dl,body,h1,h2,h3,h4,h5,h6,p,fieldset 
+form,table,ul,ol,dl,body,h1,h2,h3,h4,h5,h6,p,fieldset
         {margin:0; padding:0;}
-    
+
 h1, #products h5         {font-size:1.78em; font-weight:normal;margin-bottom:1em;}
 h2         {font-size:1.78em;}
 h3        {}
@@ -35,7 +35,7 @@ container and main
 #main      {}
 .sub_nav {
  display: block;
- margin: 10px 0 40px 0; 
+ margin: 10px 0 40px 0;
 }
 .sub_nav { font-size: .8em; }
 /*
@@ -92,10 +92,10 @@ catalog
 #catalog li:hover h3 a {color:black;border-color:#aeaeae;}
 /* page */
 .page {
- padding: 1.5em 0; 
+ padding: 1.5em 0;
 }
 .page h2 {
- margin-bottom: 1.5em; 
+ margin-bottom: 1.5em;
 }
 /* collection page
 ---------------------------------------------------------*/
@@ -175,7 +175,7 @@ work detail
   align-items: center;
 }
 .product_picture img {
-  width: 944px; 
+  width: 944px;
 }
 .product_data  {margin-top:18px;border-top:solid #e6e6e6 3px;padding:.5em 0;}
 .product_data h2  {font-size:12px;font-weight:bold;margin-bottom:.25em;}
@@ -190,7 +190,7 @@ work detail
 #section_info .col2 { width: 50%; }
 
 .mini_gallery {
- margin: 0 0 26px 0; 
+ margin: 0 0 26px 0;
 }
 .mini_gallery .thumb {
  float: left;
@@ -236,7 +236,7 @@ body .bootic_form .opt_in .bootic_input_field {
   display: none;
 }
 
-/* Blog 
+/* Blog
 ---------------------------*/
 .pagination {
   padding: 20px;
@@ -245,18 +245,18 @@ body .bootic_form .opt_in .bootic_input_field {
 }
 .post h3 {
  font-size: 1.5em;
- margin-bottom: 1em; 
+ margin-bottom: 1em;
 }
 .posts_list {
- width: 50%; 
+ width: 50%;
 }
 .post { margin-bottom: 2em; }
 /* Responsive: phones
 ----------------------------------------------------------*/
 @media (max-width: 767px) {
 
-  .handheld {display: block;}
-  .desktop {display: none;}
+  .handheld {display: block!important;}
+  .desktop {display: none!important;}
   #main h2 { margin-bottom: 1em;}
   #logo {
     display: none;
@@ -264,7 +264,7 @@ body .bootic_form .opt_in .bootic_input_field {
   }
   #logo img { width: 124px; }
   #header {margin-bottom: 2em;}
-  #nav { 
+  #nav {
     margin-top: 10px;
     margin-left: 10px;
     float: none;

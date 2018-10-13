@@ -5,7 +5,10 @@
     <h3>
       <a href="{{ _section.url }}">{{ _section.title }}</a>
     </h3>
-    <a href="{{ _section.url }}" class="thumb" title="See details for {{ _section.title }}">
+    <a href="{{ _section.url }}" class="thumb desktop" title="See details for {{ _section.title }}">
+      <img width="456" src="{{ _section.first_product.first_image | resize: '912x'}}" alt="{{ _section.title }}" />
+    </a>
+    <a href="{{ _section.first_product.url }}" class="thumb handheld" title="See details for {{ _section.title }}">
       <img width="456" src="{{ _section.first_product.first_image | resize: '912x'}}" alt="{{ _section.title }}" />
     </a>
   {% endunless %}
